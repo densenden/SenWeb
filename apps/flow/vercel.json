@@ -1,12 +1,5 @@
 {
-  "buildCommand": "cd ../.. && pnpm install && cd apps/flow && pnpm build",
-  "installCommand": "cd ../.. && pnpm install",
   "framework": "nextjs",
-  "outputDirectory": ".next",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ]
+  "buildCommand": "cd ../.. && pnpm install && cd apps/flow && pnpm build",
+  "outputDirectory": ".next"
 } 
