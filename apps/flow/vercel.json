@@ -2,6 +2,5 @@
   "framework": "nextjs",
   "buildCommand": "pnpm install && pnpm build",
   "outputDirectory": ".next",
-  "installCommand": "pnpm install",
-  "nodeVersion": "20.x"
+  "installCommand": "pnpm install"
 } 
