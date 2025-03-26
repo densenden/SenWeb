@@ -1,0 +1,8 @@
+src/
+.git/
+.gitignore
+.eslintrc
+tsconfig.json
+vercel.json
+node_modules/
+dist/ 
