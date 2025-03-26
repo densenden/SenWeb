@@ -7,6 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
         senMidnight: '#1A2E40',
         senDeepBlue: '#023859',
         senSlate: '#364C59',

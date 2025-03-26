@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import "@sen/ui/styles/globals.css";
-import { ThemeProvider } from "@sen/ui/components/theme-provider";
+import "../../app/globals.css";
+import { ThemeProvider } from "../../components/theme-provider";
 
 export const metadata: Metadata = {
   title: "SenFlow",
-  description: "SenFlow - Your Digital Flow Management Solution",
+  description: "Flow your way through life",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-rubik antialiased">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

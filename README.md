@@ -1,101 +1,104 @@
-# SenWeb
+# SenWeb - Monorepo für Sen Webprojekte
 
-A modern monorepo setup for web applications using Next.js, TypeScript, and Tailwind CSS.
+Dieses Repository enthält alle Webprojekte von Sen in einem Monorepo-Setup.
 
-## Project Structure
+## Projektstruktur
 
 ```
 SenWeb/
-├── apps/
-│   ├── flow/     # Main application
-│   └── blog/     # Blog application
 ├── packages/
-│   └── ui/       # Shared UI components
-└── vercel.json   # Vercel deployment configuration
+│   └── ui/                 # Gemeinsame UI-Komponenten-Bibliothek
+│       ├── src/
+│       │   ├── components/ # React-Komponenten
+│       │   └── lib/        # Hilfsfunktionen
+│       └── package.json
+├── apps/
+│   ├── flow/              # Flow App (flow.sen.dev)
+│   └── blog/              # Blog App (blog.sen.dev)
+└── package.json
 ```
 
-## Color Palette
+## Domains
 
-Our design system uses a carefully crafted color palette that works seamlessly in both light and dark modes:
+- flow.sen.dev - Flow App
+- blog.sen.dev - Blog App
+- ui.sen.dev - UI-Komponenten-Dokumentation (geplant)
 
-![Color Palette](color-palette.svg)
+## Entwicklung
 
-### Light Mode
-- Background: `hsl(0 0% 100%)` - Pure white
-- Foreground: `hsl(222.2 84% 4.9%)` - Deep gray
-- Primary: `hsl(222.2 47.4% 11.2%)` - Dark gray
-- Secondary: `hsl(210 40% 96.1%)` - Light blue-gray
-- Accent: `hsl(210 40% 96.1%)` - Light blue-gray
-- Muted: `hsl(210 40% 96.1%)` - Light blue-gray
-- Border: `hsl(214.3 31.8% 91.4%)` - Light gray
-- Input: `hsl(214.3 31.8% 91.4%)` - Light gray
-- Ring: `hsl(222.2 84% 4.9%)` - Deep gray
+### Voraussetzungen
 
-### Dark Mode
-- Background: `hsl(222.2 84% 4.9%)` - Deep gray
-- Foreground: `hsl(210 40% 98%)` - Light gray
-- Primary: `hsl(210 40% 98%)` - Light gray
-- Secondary: `hsl(217.2 32.6% 17.5%)` - Dark blue-gray
-- Accent: `hsl(217.2 32.6% 17.5%)` - Dark blue-gray
-- Muted: `hsl(217.2 32.6% 17.5%)` - Dark blue-gray
-- Border: `hsl(217.2 32.6% 17.5%)` - Dark blue-gray
-- Input: `hsl(217.2 32.6% 17.5%)` - Dark blue-gray
-- Ring: `hsl(212.7 26.8% 83.9%)` - Light blue-gray
+- Node.js 18+
+- pnpm
+- Vercel CLI (für Deployment)
 
-## Getting Started
+### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/densenden/SenWeb.git
-   cd SenWeb
-   ```
+```bash
+# Repository klonen
+git clone https://github.com/studiosenmaster/SenWeb.git
+cd SenWeb
 
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+# Dependencies installieren
+pnpm install
 
-3. Start the development server:
-   ```bash
-   # For Flow app
-   cd apps/flow && pnpm dev
+# UI-Paket bauen
+cd packages/ui
+pnpm build
+```
 
-   # For Blog app
-   cd apps/blog && pnpm dev
-   ```
+### Lokale Entwicklung
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+```bash
+# Flow App starten
+cd apps/flow
+pnpm dev
 
-## Development
-
-- Flow app: [http://localhost:3000](http://localhost:3000)
-- Blog app: [http://localhost:3001](http://localhost:3001)
+# Blog App starten
+cd apps/blog
+pnpm dev
+```
 
 ## Deployment
 
-The project is configured for deployment on Vercel:
+Alle Apps werden auf Vercel deployed. Das Deployment erfolgt automatisch bei Push auf den main Branch.
 
-- Flow app: [flow.sen.studio](https://flow.sen.studio)
-- Blog app: [blog.sen.studio](https://blog.sen.studio)
+### UI-Paket
 
-## Features
+Das UI-Paket muss vor dem Deployment der Apps gebaut und veröffentlicht werden:
 
-- 🎨 Modern UI with Tailwind CSS
-- 🌓 Dark mode support
-- 📱 Responsive design
-- 🚀 Fast page loads with Next.js
-- 📦 Monorepo setup with pnpm
-- 🔄 Shared UI components
-- 🎯 TypeScript for type safety
+```bash
+cd packages/ui
+pnpm build
+npm publish --access public
+```
 
-## Contributing
+### Apps
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Jede App hat ihre eigene Vercel-Konfiguration:
 
-## License
+```json
+{
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs"
+}
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+### Deployment-Prozess
+
+1. UI-Paket aktualisieren und veröffentlichen
+2. Änderungen committen und pushen
+3. Vercel automatisiert das Deployment der Apps
+
+## Technologie-Stack
+
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vercel für Hosting und Deployment
+
+## Lizenz
+
+MIT 

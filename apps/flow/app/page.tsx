@@ -1,4 +1,4 @@
-import { Button } from "@sen/ui/components/Button"
+import { Button } from "@studiosenmaster/sen-ui"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {

@@ -94,61 +94,13 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-bold">{content.title}</div>
-          <div className="flex items-center gap-4">
-            <LanguageToggle currentLanguage={language} onLanguageChange={handleLanguageChange} />
-            <ThemeToggle />
-            <Button>{content.newsletter.button}</Button>
-          </div>
-        </div>
-      </nav>
-
-      <section className="pt-32 pb-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-6xl font-bold mb-6">{content.title}</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
-            {content.subtitle}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">{content.technology.title}</h2>
-              <p className="text-muted-foreground">
-                {content.technology.description}
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold mb-4">{content.design.title}</h2>
-              <p className="text-muted-foreground">
-                {content.design.description}
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold mb-4">{content.innovation.title}</h2>
-              <p className="text-muted-foreground">
-                {content.innovation.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">{content.newsletter.title}</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            {content.newsletter.description}
-          </p>
-          <Button size="lg">{content.newsletter.button}</Button>
-        </div>
-      </section>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
+        <h1 className="text-4xl font-bold mb-8">Willkommen beim Sen Blog</h1>
+        <p className="text-xl mb-4">
+          Hier finden Sie interessante Artikel über Softwareentwicklung und Technologie.
+        </p>
+      </div>
     </main>
   )
 } 

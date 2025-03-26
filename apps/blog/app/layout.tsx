@@ -1,20 +1,23 @@
-import type { Metadata } from 'next'
-import "@sen/ui/styles/globals.css"
-import { ThemeProvider } from "@sen/ui/components/theme-provider"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { ThemeProvider } from "@studiosenmaster/sen-ui"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'SenBlog',
-  description: 'Insights and thoughts from the world of software development',
+  title: "Sen Blog",
+  description: "Blog powered by Sen",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="font-rubik antialiased">
+    <html lang="de" suppressHydrationWarning>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
