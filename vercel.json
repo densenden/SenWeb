@@ -10,5 +10,7 @@
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "rootDirectory": "apps/flow"
+  "rootDirectory": ".",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
+  "regions": ["fra1"]
 } 
