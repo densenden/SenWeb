@@ -1,0 +1,12 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "apps/flow/*": true,
+      "apps/blog/*": true,
+      "packages/ui/*": true
+    }
+  },
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs"
+} 
