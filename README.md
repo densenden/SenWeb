@@ -1,81 +1,116 @@
-# SenWeb - Monorepo für Sen Webprojekte
+# SenWeb - Monorepo for Studio Sen Web Projects
 
-Dieses Repository enthält alle Webprojekte von Sen in einem Monorepo-Setup.
+This repository contains all web projects of Studio Sen in a monorepo setup.
 
-## Projektstruktur
+## Project Structure
 
 ```
 SenWeb/
 ├── packages/
-│   └── ui/                 # Gemeinsame UI-Komponenten-Bibliothek
-│       ├── src/
-│       │   ├── components/ # React-Komponenten
-│       │   └── lib/        # Hilfsfunktionen
-│       └── package.json
+│   ├── ui/                 # Shared UI Component Library
+│   │   ├── src/
+│   │   │   ├── components/ # React Components
+│   │   │   └── lib/        # Utility Functions
+│   │   └── package.json
+│   ├── icons/             # Material Symbols Icons
+│   └── utils/             # Shared Utilities
 ├── apps/
-│   ├── flow/              # Flow App (flow.sen.dev)
-│   └── blog/              # Blog App (blog.sen.dev)
+│   ├── main/              # sen.studio
+│   ├── about/             # about.sen.studio
+│   ├── art/               # art.sen.studio
+│   ├── blog/              # blog.sen.studio
+│   ├── booking/           # booking.deniskreuzer.dk
+│   ├── about-denis/       # about.deniskreuzer.dk
+│   ├── collab/            # collab.sen.studio
+│   ├── content/           # content.sen.studio
+│   ├── design/            # design.sen.studio
+│   ├── flow/              # flow.sen.studio
+│   ├── meditation/        # meditation.sen.studio
+│   ├── mentor/            # mentor.deniskreuzer.dk
+│   ├── model/             # model.deniskreuzer.dk
+│   ├── shop/              # shop.sen.studio
+│   ├── startup/           # startup.sen.studio
+│   ├── web/               # web.sen.studio
+│   └── intern/            # intern.deniskreuzer.dk
 └── package.json
 ```
 
-## Domains
+## Design System
 
-- flow.sen.dev - Flow App
-- blog.sen.dev - Blog App
-- ui.sen.dev - UI-Komponenten-Dokumentation (geplant)
+### Typography
+- Rubik (Main Text)
+- Bodoni Moda (Headlines)
 
-## Entwicklung
+### Color Palette
+```javascript
+colors: {
+  senMidnight: '#1A2E40',
+  senDeepBlue: '#023859',
+  senSlate: '#364C59',
+  senClay: '#BF947A',
+  senSkin: '#F2CCB6',
+  senOxide: '#732727',
+  senRust: '#BF391B',
+  senBark: '#4C2929',
+  senBurnt: '#BF3617'
+}
+```
 
-### Voraussetzungen
+### Icons
+- Google Material Symbols
+
+## Development
+
+### Prerequisites
 
 - Node.js 18+
 - pnpm
-- Vercel CLI (für Deployment)
+- Vercel CLI (for deployment)
 
 ### Installation
 
 ```bash
-# Repository klonen
+# Clone repository
 git clone https://github.com/studiosenmaster/SenWeb.git
 cd SenWeb
 
-# Dependencies installieren
+# Install dependencies
 pnpm install
 
-# UI-Paket bauen
+# Build UI package
 cd packages/ui
 pnpm build
 ```
 
-### Lokale Entwicklung
+### Local Development
 
 ```bash
-# Flow App starten
+# Start app (example for Flow)
 cd apps/flow
-pnpm dev
-
-# Blog App starten
-cd apps/blog
 pnpm dev
 ```
 
 ## Deployment
 
-Alle Apps werden auf Vercel deployed. Das Deployment erfolgt automatisch bei Push auf den main Branch.
+All apps are deployed on Vercel. Deployment is automated on push to the main branch.
 
-### UI-Paket
+### UI Package
 
-Das UI-Paket muss vor dem Deployment der Apps gebaut und veröffentlicht werden:
+The UI package is published as an npm package and can be used in all apps:
 
 ```bash
+# Build and publish UI package
 cd packages/ui
 pnpm build
 npm publish --access public
+
+# Use UI package in an app
+pnpm add @studiosenmaster/sen-ui
 ```
 
 ### Apps
 
-Jede App hat ihre eigene Vercel-Konfiguration:
+Each app has its own Vercel configuration:
 
 ```json
 {
@@ -85,20 +120,22 @@ Jede App hat ihre eigene Vercel-Konfiguration:
 }
 ```
 
-### Deployment-Prozess
+### Deployment Process
 
-1. UI-Paket aktualisieren und veröffentlichen
-2. Änderungen committen und pushen
-3. Vercel automatisiert das Deployment der Apps
+1. Update and publish UI package
+2. Commit and push changes
+3. Vercel automates app deployment
 
-## Technologie-Stack
+## Technology Stack
 
-- Next.js 14
+- Next.js 14 (App Router)
 - React 18
 - TypeScript
 - Tailwind CSS
-- Vercel für Hosting und Deployment
+- Prisma ORM
+- SQLite
+- Vercel for hosting and deployment
 
-## Lizenz
+## License
 
 MIT 
