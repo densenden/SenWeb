@@ -1,30 +1,29 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:../dev.db"
+}
+
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-}
-
 model Artwork {
-  id          Int      @id @default(autoincrement())
+  id          Int         @id @default(autoincrement())
   title       String
   description String?
   imageUrl    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  collection  Collection? @relation(fields: [collectionId], references: [id])
-  collectionId Int?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  collections Collection[]
 }
 
 model Collection {
-  id        Int       @id @default(autoincrement())
-  name      String
+  id          Int       @id @default(autoincrement())
+  name        String
   description String?
-  artworks  Artwork[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  artworks    Artwork[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Product {
@@ -38,28 +37,28 @@ model Product {
 }
 
 model Project {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String?
-  type        ProjectType @relation(fields: [typeId], references: [id])
-  typeId      Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           Int         @id @default(autoincrement())
+  title        String
+  description  String?
+  projectType  ProjectType @relation(fields: [projectTypeId], references: [id])
+  projectTypeId Int
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
 }
 
 model ProjectType {
-  id        Int       @id @default(autoincrement())
-  name      String
-  projects  Project[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id       Int       @id @default(autoincrement())
+  name     String
+  projects Project[]
 }
 
 model ModelJob {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
-  status      String   @default("pending")
+  location    String?
+  date        DateTime
+  fee         Float?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 } 

@@ -1,28 +1,17 @@
 {
   "name": "sen-web",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "pnpm --filter \"*\" dev",
-    "build": "pnpm --filter \"*\" build",
-    "lint": "pnpm --filter \"*\" lint",
-    "clean": "pnpm --filter \"*\" clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prisma:generate": "prisma generate",
-    "prisma:push": "prisma db push"
+    "dev": "pnpm --filter './apps/**' dev",
+    "build": "pnpm --filter './apps/**' build",
+    "start": "pnpm --filter './apps/**' start",
+    "lint": "pnpm --filter './apps/**' lint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "prisma": "^5.10.0",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.3.3"
+    "prisma": "^5.0.0"
   },
-  "dependencies": {
-    "@prisma/client": "^5.10.0",
-    "@studiosenmaster/sen-ui": "^0.0.1"
-  }
+  "packageManager": "pnpm@10.6.5"
 }

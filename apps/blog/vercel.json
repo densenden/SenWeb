@@ -1,6 +1,7 @@
 {
+  "buildCommand": "cd ../.. && pnpm build --filter blog",
+  "devCommand": "cd ../.. && pnpm dev --filter blog",
+  "installCommand": "cd ../.. && pnpm install",
   "framework": "nextjs",
-  "buildCommand": "pnpm install && pnpm build",
-  "outputDirectory": ".next",
-  "installCommand": "pnpm install"
+  "outputDirectory": ".next"
 } 

@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ../.. && pnpm build --filter flow",
+  "devCommand": "cd ../.. && pnpm dev --filter flow",
+  "installCommand": "cd ../.. && pnpm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next"
+} 
