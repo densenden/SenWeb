@@ -1,62 +1,60 @@
-import { Button } from '@sen/ui'
+import { Button } from "@sen/ui/components/Button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black">
-      {/* Hero Section */}
-      <section className="section">
-        <div className="container">
-          <div className="max-w-3xl">
-            <h1 className="text-6xl font-display tracking-tight leading-tight mb-8 animate-variable-text">
-              SenFlow
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl">
-              Flow beginnt dort, wo Klarheit auf Code trifft.
-            </p>
-            <div className="flex gap-4">
-              <Button>Erkunden</Button>
-              <Button variant="outline">Mehr erfahren</Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="section bg-gray-50 dark:bg-gray-900">
-        <div className="container">
-          <div className="grid-layout">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-display">Klarheit</h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Wir schaffen Transparenz in der digitalen Welt.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-2xl font-display">Achtsamkeit</h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Jede Zeile Code wird mit Bedacht geschrieben.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-2xl font-display">Kraft</h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                Technologie als Werkzeug für positive Veränderung.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-display mb-6">Bereit für den nächsten Schritt?</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              Lassen Sie uns gemeinsam Ihre Vision verwirklichen.
-            </p>
+    <main className="min-h-screen bg-background">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="text-2xl font-bold">SenFlow</div>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Button>Kontakt aufnehmen</Button>
           </div>
+        </div>
+      </nav>
+
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-6xl font-bold mb-6">SenFlow</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl">
+            Flow beginnt dort, wo Klarheit auf Code trifft. Wir entwickeln Software, die nicht nur funktioniert, sondern auch inspiriert.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Klarheit</h2>
+              <p className="text-muted-foreground">
+                Wir schaffen Transparenz in der Technologie, damit Sie den Überblick behalten.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Achtsamkeit</h2>
+              <p className="text-muted-foreground">
+                Jede Zeile Code wird mit Bedacht geschrieben, um nachhaltige Lösungen zu schaffen.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Kraft</h2>
+              <p className="text-muted-foreground">
+                Unsere Technologie gibt Ihnen die Kraft, Ihre Ziele zu erreichen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Bereit für den nächsten Schritt?</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Lassen Sie uns gemeinsam Ihre Vision verwirklichen. Kontaktieren Sie uns für ein unverbindliches Gespräch.
+          </p>
+          <Button size="lg">Kontakt aufnehmen</Button>
         </div>
       </section>
     </main>

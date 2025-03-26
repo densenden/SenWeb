@@ -1,31 +1,31 @@
 import type { Metadata } from 'next'
-import { Rubik, Bodoni_Moda } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
-const rubik = Rubik({
-  subsets: ['latin'],
-  variable: '--font-rubik',
-})
-
-const bodoniModa = Bodoni_Moda({
-  subsets: ['latin'],
-  variable: '--font-bodoni-moda',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SenFlow - Studio Sen',
-  description: 'Flow beginnt dort, wo Klarheit auf Code trifft.',
+  title: 'SenFlow',
+  description: 'SenFlow - Klarheit in der Technologie',
 }
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="de" className={`${rubik.variable} ${bodoniModa.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
+    <html lang="de" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
