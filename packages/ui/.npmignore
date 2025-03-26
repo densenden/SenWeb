@@ -4,5 +4,4 @@ src/
 .eslintrc
 tsconfig.json
 vercel.json
-node_modules/
-dist/ 
+node_modules/ 

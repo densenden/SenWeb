@@ -1,7 +1,9 @@
 {
   "name": "@sen/ui",
   "version": "0.0.1",
-  "private": false,
+  "description": "Shared UI components for Sen Web applications",
+  "author": "Sen Web",
+  "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
