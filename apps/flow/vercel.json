@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd ../.. && pnpm install && cd apps/flow && pnpm build",
-  "installCommand": "cd ../.. && pnpm install",
-  "framework": "nextjs",
-  "outputDirectory": ".next",
-  "projectRoot": "apps/flow"
-} 
