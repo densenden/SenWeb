@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Rubik:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bodoni: 'Bodoni Moda', serif;
+  --font-rubik: 'Rubik', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .font-bodoni {
+    font-family: var(--font-bodoni);
+  }
+  
+  .font-rubik {
+    font-family: var(--font-rubik);
+  }
+} 

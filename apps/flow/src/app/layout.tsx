@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import "@sen/ui/styles/globals.css"
-import { ThemeProvider } from "@sen/ui/components/theme-provider"
+import type { Metadata } from "next";
+import "@sen/ui/styles/globals.css";
+import { ThemeProvider } from "@sen/ui/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: 'SenBlog',
-  description: 'Insights and thoughts from the world of software development',
-}
+  title: "SenFlow",
+  description: "SenFlow - Your Digital Flow Management Solution",
+};
 
 export default function RootLayout({
   children,
@@ -25,5 +25,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 } 
