@@ -1,16 +1,9 @@
 {
-  "git": {
-    "deploymentEnabled": {
-      "apps/flow/*": true,
-      "apps/blog/*": true,
-      "packages/ui/*": true
-    }
-  },
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
   "framework": "nextjs",
-  "outputDirectory": ".next",
-  "rootDirectory": ".",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
-  "regions": ["fra1"]
+  "buildCommand": "pnpm install && cd apps/flow && pnpm build",
+  "outputDirectory": "apps/flow/.next",
+  "monorepo": true,
+  "workspaceRoot": ".",
+  "installCommand": "pnpm install",
+  "packageManager": "pnpm"
 } 
