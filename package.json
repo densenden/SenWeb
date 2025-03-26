@@ -2,16 +2,20 @@
   "name": "sen-web",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "pnpm --filter './apps/**' dev",
     "build": "pnpm --filter './apps/**' build",
     "start": "pnpm --filter './apps/**' start",
-    "lint": "pnpm --filter './apps/**' lint",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push"
+    "lint": "pnpm --filter './apps/**' lint"
   },
   "devDependencies": {
-    "prisma": "^5.0.0"
-  },
-  "packageManager": "pnpm@10.6.5"
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
 }

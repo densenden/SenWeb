@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+  }
+
+  [data-theme='dark'] {
+    --background: #1a1a1a;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  @apply bg-white text-[#1a1a1a] antialiased;
+}
+
+.nav-link {
+  @apply text-sm font-medium text-gray-600 hover:text-black transition-colors;
+}
+
+.horizontal-line {
+  @apply w-full h-px bg-gray-200 my-8;
+}
+
+.section-title {
+  @apply text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#1a1a1a] mb-4;
+}
+
+.section-subtitle {
+  @apply text-xl text-gray-600 max-w-2xl;
+}
+
+.button-primary {
+  @apply px-6 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors;
+}
+
+.button-secondary {
+  @apply px-6 py-3 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors;
+} 
