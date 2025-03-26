@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["@studiosenmaster/sen-ui"],
-  output: 'standalone'
+  transpilePackages: ["@studiosenmaster/sen-ui"]
 }
 
 module.exports = nextConfig 

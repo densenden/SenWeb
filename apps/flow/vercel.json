@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd ../.. && pnpm install --no-frozen-lockfile && cd apps/flow && NODE_ENV=production pnpm build",
-  "installCommand": "cd ../.. && pnpm install --no-frozen-lockfile",
-  "framework": "nextjs",
-  "outputDirectory": ".next"
-} 
