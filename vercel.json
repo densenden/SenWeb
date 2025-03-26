@@ -2,7 +2,6 @@
   "framework": "nextjs",
   "buildCommand": "pnpm install && cd apps/flow && pnpm build",
   "outputDirectory": "apps/flow/.next",
-  "workspaceRoot": ".",
   "installCommand": "pnpm install",
   "packageManager": "pnpm"
 } 
